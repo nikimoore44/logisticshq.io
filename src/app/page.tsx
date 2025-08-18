@@ -4,6 +4,9 @@ import NavBar from "./components/NavBar";
 import OurPricing from "./components/OurPricing";
 import Services from "./components/Services";
 import Footer from "./components/Footer";
+import FAQs from "./components/FAQs";
+import Contactus from "./components/Contactus";
+
 export default function Home() {
   return (
     <>
@@ -13,6 +16,8 @@ export default function Home() {
     <Services />
     <KeyStats />
     <OurPricing />
+    <FAQs />
+    <Contactus />
     <Footer />
     </div>
     </>

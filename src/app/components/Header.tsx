@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       </h1>
 
       {/* Subheading */}
-      <p className="mt-5 text-xl md:text-2xl text-gray-200 flex items-center gap-3 flex-wrap justify-center items-center font-base leading-relaxed tracking-wide" style={{ fontFamily: 'var(--font-rubik)' }}>
+      <p className="mt-5 text-xl md:text-2xl text-gray-200 flex gap-3 flex-wrap justify-center items-center font-base leading-relaxed tracking-wide" style={{ fontFamily: 'var(--font-rubik)' }}>
         <span className="space-x-2">Logistics HQ preps your products</span>
                 <div className="flex justify-center  mt-4">
           <span className="bg-white px-2 py-1 rounded-md font-medium flex items-center gap-3 transition-all duration-700 transform hover:scale-105" style={{
@@ -75,12 +75,12 @@ const Header: React.FC = () => {
       </p>
 
       {/* Contact Us Button */}
-      <button className="mt-22 px-7 py-3 text-white font-base text-[26px] rounded-2xl transition-all duration-300 shadow-lg" style={{ 
+      <a href="#contactus" className="mt-22 px-7 py-3 text-white font-base text-[26px] rounded-2xl transition-all duration-300 shadow-lg" style={{ 
         fontFamily: 'var(--font-rubik)',
         background: 'linear-gradient(to right, #AE8041, #D8C67F)'
       }}>
         Contact Us
-      </button>
+      </a>
 
       {/* GIF Image */}
       <div className="mt-26 flex justify-center">

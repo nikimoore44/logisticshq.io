@@ -28,7 +28,7 @@ const ShowcaseNavbar = () => {
               <div
        className={`rounded-[6px] sticky md:mx-auto z-50 xl:w-4/5 2xl:w-[68%] transition-transform duration-300 ${
          visible ? "translate-y-0 top-5" : "-translate-y-full -top-1"
-       } bg-[#181717]/90 relative overflow-hidden shadow-[inset_0_0_2px_rgba(255,255,255,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.3)]`}
+       } bg-[#181717]/90 relative overflow-hidden shadow-[inset_0_0_2px_rgba(255,255,255,0.5)]`}
      >
        {/* Subtle top edge highlight */}
        <div className="absolute top-0 left-0 right-0 h-[1px] "></div>
@@ -86,12 +86,12 @@ const ShowcaseNavbar = () => {
            
          </div>
 
-                 {/* Desktop Links */}
+         {/* Desktop Links */}
          <div className="hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-white font-medium text-lg">
-           <Link href="/services" className="hover:text-gray-300 transition-colors">Services</Link>
-           <Link href="/pricing" className="hover:text-gray-300 transition-colors">Pricing</Link>
-           <Link href="/faqs" className="hover:text-gray-300 transition-colors">FAQs</Link>
-           <Link href="/contactus" className="hover:text-gray-300 transition-colors">Contact Us</Link>
+           <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
+           <Link href="#pricing" className="hover:text-primary transition-colors">Pricing</Link>
+           <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
+           <Link href="#contactus" className="hover:text-primary transition-colors">Contact Us</Link>
          </div>
 
       </div>
@@ -101,16 +101,16 @@ const ShowcaseNavbar = () => {
         <div className="md:hidden px-6 pb-4 bg-gray-700">
           <ul className="flex flex-col gap-4 text-white font-medium text-base">
             <li>
-              <Link href="/services" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Services</Link>
+              <Link href="#services" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Services</Link>
             </li>
             <li>
-              <Link href="/pricing" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Pricing</Link>
+              <Link href="#pricing" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Pricing</Link>
             </li>
             <li>
-              <Link href="/faqs" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">FAQs</Link>
+              <Link href="#faqs" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">FAQs</Link>
             </li>
             <li>
-              <Link href="/contactus" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact Us</Link>
+              <Link href="#contactus" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact Us</Link>
             </li>
           </ul>
         </div>

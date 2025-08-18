@@ -21,7 +21,7 @@ const OurPricing: React.FC = () => {
   ];
 
   return (
-    <section className="bg-black py-16 px-4">
+    <section id="pricing" className="bg-black py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-wider" style={{ fontFamily: 'var(--font-jockey-one)' }}>
