@@ -5,20 +5,17 @@ const OurPricing: React.FC = () => {
   const pricingPlans = [
     {
       service: "FBA & WFS Procurement",
-      price: "$0.50",
-      unit: "/ unit",
+      price: "$0.50 / unit",
       highlighted: true
     },
     {
       service: "FBM Fulfillment",
-      price: "$2.00",
-      unit: "/ unit",
+      price: "$2.00 / unit",
       highlighted: false
     },
     {
       service: "Storage",
-      price: "$40.00",
-      unit: "/ pallet",
+      price: "$40.00 / pallet",
       highlighted: false
     }
   ];
@@ -61,17 +58,6 @@ const OurPricing: React.FC = () => {
                     }}
                   >
                     {plan.price}
-                  </span>
-                  <span 
-                    className="text-2xl font-medium"
-                    style={{
-                      background: 'linear-gradient(to right, #AE8041, #D8C67F)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                  >
-                    {plan.unit}
                   </span>
                 </div>
                 
