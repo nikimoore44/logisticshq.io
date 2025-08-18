@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             {/* Road/Path Icon */}
             <div className="w-48 h-48 relative">
               <Image
-                src="/svgs/Frame 1000001478 (1).svg"
+                src="/svgs/logo1.svg"
                 alt="Logistics HQ Icon"
                 width={192}
                 height={192}

@@ -77,7 +77,7 @@ const ShowcaseNavbar = () => {
                  {/* Logo */}
          <div className="flex items-center">
            <Image
-             src="/svgs/Frame 1000001478 (1).svg"
+             src="/svgs/logo1.svg"
              alt="Logistics HQ Logo"
              width={100}
              height={100}
