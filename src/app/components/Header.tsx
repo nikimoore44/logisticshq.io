@@ -89,18 +89,43 @@ const Header: React.FC = () => {
         </a>
       </ScrollAnimation>
 
-      {/* GIF Image */}
-      <ScrollAnimation animationType="fade-up" delay={0.4}>
-        <div className="mt-26 flex justify-center">
-          <Image
-            src="/images/gifImage.png"
-            alt="Animated GIF"
-            width={1100}
-            height={1000}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-      </ScrollAnimation>
+                   {/* GIF Images */}
+             <ScrollAnimation animationType="fade-up" delay={0.4}>
+               <div className="mt-26 flex flex-col lg:flex-row gap-8 justify-center items-center">
+                 {/* Flow 1 GIF */}
+                 <div className="flex justify-center">
+                   <Image
+                     src="/images/Flow1.gif"
+                     alt="Flow Animation 1"
+                     width={350}
+                     height={350}
+                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                   />
+                 </div>
+                 
+                 {/* Flow 2 GIF */}
+                 <div className="flex justify-center">
+                   <Image
+                     src="/images/Flow2.gif"
+                     alt="Flow Animation 2"
+                     width={350}
+                     height={350}
+                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                   />
+                 </div>
+                 
+                 {/* Flow 3 GIF */}
+                 <div className="flex justify-center">
+                   <Image
+                     src="/images/Flow3.gif"
+                     alt="Flow Animation 3"
+                     width={350}
+                     height={350}
+                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                   />
+                 </div>
+               </div>
+             </ScrollAnimation>
     </header>
   );
 };
