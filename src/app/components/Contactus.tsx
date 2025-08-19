@@ -19,11 +19,11 @@ const Contactus: React.FC = () => {
             <p className="text-white text-xl leading-relaxed" style={{ fontFamily: 'var(--font-rubik)' }}>
               <a
                 href="mailto:la@logixticshq.io"
-                className="underline hover:text-[#D8C67F] transition-colors"
+                className="underline font-bold hover:text-[#D8C67F] transition-colors"
               >
                 la@logixticshq.io
               </a>
-              or fill out the inquiry form.
+              {" "}or fill out the inquiry form.
             </p>
           </div>
         </ScrollAnimation>
@@ -34,7 +34,17 @@ const Contactus: React.FC = () => {
             <div className="space-y-8">
               {/* Google Maps Embed */}
               <div className="w-full h-96 rounded-lg overflow-hidden">
-                <iframe
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.365824843651!2d-118.21082862454506!3d33.85446182814839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cba56212b15f%3A0x3eb31cbe25a678af!2sCalifornia%20FBA%20Prep%20Center%20%7C%20E-commerce%20Fulfillment%20Center%20%7C%203PL%20Warehouse!5e0!3m2!1sen!2s!4v1755608494445!5m2!1sen!2s" 
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Gardena, CA Location"
+                className="rounded-lg"
+              ></iframe>
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.1234567890123!2d-118.3091185!3d33.8837294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b581539bdd09%3A0xc619371ab562ca91!2sGardena%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890123"
                   width="100%"
                   height="100%"
@@ -44,7 +54,7 @@ const Contactus: React.FC = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Gardena, CA Location"
                   className="rounded-lg"
-                ></iframe>
+                ></iframe> */}
               </div>
 
               {/* Contact Information */}
@@ -54,21 +64,21 @@ const Contactus: React.FC = () => {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span style={{ fontFamily: 'var(--font-rubik)' }}>la@logixticshq.io</span>
+                  <a href="mailto:la@logixticshq.io" style={{ fontFamily: 'var(--font-rubik)' }}>la@logixticshq.io</a>
                 </div>
 
                 <div className="flex items-center text-xl text-white">
                   <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  <span style={{ fontFamily: 'var(--font-rubik)' }}>(123)-456-7890</span>
+                  <a href="tel:+1234567890" style={{ fontFamily: 'var(--font-rubik)' }}>(123)-456-7890</a>
                 </div>
 
                 <div className="flex items-center text-xl text-white">
                   <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  <span style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</span>
+                  <a href="https://www.google.com/maps/dir//Gardena+California/@33.8837294,-118.3091185,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c2b581539bdd09:0xc619371ab562ca91!2m2!1d-118.3091185!2d33.8837294?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</a>
                 </div>
               </div>
             </div>
@@ -163,7 +173,10 @@ const Contactus: React.FC = () => {
                   <a href="#"
                      type="button"
                      className="bg-white text-black font-semibold py-4 px-12 rounded-lg hover:bg-gray-100 hover:shadow-xl hover:shadow-[#D8C67F]/40 hover:-translate-y-2 hover:scale-105 transition-all duration-300 text-lg"
-                     style={{ fontFamily: 'var(--font-rubik)' }}
+                     style={{ 
+                      fontFamily: 'var(--font-rubik)',
+                      background: 'linear-gradient(to right, #AE8041, #D8C67F)'
+                    }}
                    >
                      Get Started
                    </a>

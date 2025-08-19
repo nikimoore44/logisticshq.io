@@ -10,16 +10,16 @@ import Contactus from "./components/Contactus";
 export default function Home() {
   return (
     <>
-    <div className="bg-black">
-    <NavBar />
-    <Header />
-    <Services />
-    <KeyStats />
-    <OurPricing />
-    <FAQs />
-    <Contactus />
-    <Footer />
-    </div>
+      <div className="bg-black">
+        <NavBar />
+        <Header />
+        <Services />
+        <KeyStats />
+        <OurPricing />
+        <FAQs />
+        <Contactus />
+        <Footer />
+      </div>
     </>
   );
 }
