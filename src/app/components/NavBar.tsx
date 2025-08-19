@@ -65,7 +65,7 @@ const ShowcaseNavbar = () => {
               >
                 <path
                   d="M6.25 11.25H33.75M6.25 20H33.75M6.25 28.75H20"
-                  stroke="#1E1E1E"
+                  stroke="#FFFFFF"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -87,7 +87,7 @@ const ShowcaseNavbar = () => {
          </div>
 
          {/* Desktop Links */}
-         <div className="hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-white font-medium text-lg">
+         <div className="hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-white font-medium text-lg" style={{ fontFamily: 'var(--font-rubik)' }}>
            <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
            <Link href="#pricing" className="hover:text-primary transition-colors">Pricing</Link>
            <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
@@ -98,7 +98,7 @@ const ShowcaseNavbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-4 bg-gray-700">
+        <div className="md:hidden px-6 pb-4 bg-[#181717]/90">
           <ul className="flex flex-col gap-4 text-white font-medium text-base">
             <li>
               <Link href="#services" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Services</Link>
