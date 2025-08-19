@@ -18,10 +18,10 @@ const Contactus: React.FC = () => {
             </p>
             <p className="text-white text-xl leading-relaxed" style={{ fontFamily: 'var(--font-rubik)' }}>
               <a
-                href="mailto:la@logixticshq.io"
+                href="mailto:la@logisticshq.io"
                 className="underline font-bold hover:text-[#D8C67F] transition-colors"
               >
-                la@logixticshq.io
+                la@logisticshq.io
               </a>
               {" "}or fill out the inquiry form.
             </p>
@@ -64,7 +64,7 @@ const Contactus: React.FC = () => {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <a href="mailto:la@logixticshq.io" style={{ fontFamily: 'var(--font-rubik)' }}>la@logixticshq.io</a>
+                  <a href="mailto:la@logisticshq.io" style={{ fontFamily: 'var(--font-rubik)' }}>la@logisticshq.io</a>
                 </div>
 
                 <div className="flex items-center text-xl text-white">
@@ -78,7 +78,7 @@ const Contactus: React.FC = () => {
                   <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  <a href="https://www.google.com/maps/dir//Gardena+California/@33.8837294,-118.3091185,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c2b581539bdd09:0xc619371ab562ca91!2m2!1d-118.3091185!2d33.8837294?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</a>
+                  <a href="https://maps.app.goo.gl/7NX9sdwn9FVaW3Ji7" target="_blank" style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</a>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ const Contactus: React.FC = () => {
                     </label>
                                          <input
                        type="text"
-                       defaultValue="John"
+                       placeholder="John"
                        className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
                        style={{ fontFamily: 'var(--font-rubik)' }}
                      />
@@ -108,7 +108,7 @@ const Contactus: React.FC = () => {
                     </label>
                                          <input
                        type="text"
-                       defaultValue="Smith"
+                       placeholder="Smith"
                        className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
                        style={{ fontFamily: 'var(--font-rubik)' }}
                      />
@@ -123,7 +123,7 @@ const Contactus: React.FC = () => {
                     </label>
                                          <input
                        type="email"
-                       defaultValue="Seller@amazon.com"
+                       placeholder="seller@amazon.com"
                        className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
                        style={{ fontFamily: 'var(--font-rubik)' }}
                      />
@@ -135,7 +135,7 @@ const Contactus: React.FC = () => {
                     </label>
                                          <input
                        type="tel"
-                       defaultValue="(123) 456-7890"
+                       placeholder="(123) 456-7890"
                        className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
                        style={{ fontFamily: 'var(--font-rubik)' }}
                      />
@@ -149,7 +149,7 @@ const Contactus: React.FC = () => {
                   </label>
                                      <input
                      type="text"
-                     defaultValue="Amazing Seller LLC"
+                     placeholder="Amazing Seller LLC"
                      className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
                      style={{ fontFamily: 'var(--font-rubik)' }}
                    />

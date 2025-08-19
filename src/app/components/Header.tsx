@@ -73,7 +73,7 @@ const Header: React.FC = () => {
         <div className="mt-5 mb-22 text-xl md:text-2xl text-gray-200 flex gap-3 flex-wrap justify-center items-center font-base leading-relaxed tracking-wide" style={{ fontFamily: 'var(--font-rubik)' }}>
           <span className="space-x-2">Logistics HQ preps your products</span>
                   <div className="flex justify-center  mt-4">
-            <span className="bg-white px-2 py-1 rounded-md font-medium flex items-center gap-3 transition-all duration-700 transform hover:scale-105" style={{
+            <span className="bg-white px-2 py-1 -mt-3 rounded-md font-medium flex items-center gap-3 transition-all duration-700 transform hover:scale-105" style={{
               boxShadow: '0 0 35px rgba(174, 128, 65, 0.6), 0 0 20px rgba(216, 198, 127, 0.5), 0 0 15px rgba(174, 128, 65, 0.4)'
             }}>
               <Image
@@ -140,6 +140,7 @@ const Header: React.FC = () => {
                 width={350}
                 height={350}
                 className="rounded-lg shadow-lg"
+                unoptimized
               />
             </div>
             
@@ -151,6 +152,7 @@ const Header: React.FC = () => {
                 width={350}
                 height={350}
                 className="rounded-lg shadow-lg"
+                unoptimized
               />
             </div>
             
@@ -162,6 +164,7 @@ const Header: React.FC = () => {
                 width={350}
                 height={350}
                 className="rounded-lg shadow-lg"
+                unoptimized
               />
             </div>
           </div>
