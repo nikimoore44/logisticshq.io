@@ -92,7 +92,7 @@ const FAQs: React.FC = () => {
   const rightColumn = faqs.slice(Math.ceil(faqs.length / 2));
 
   return (
-    <section className="bg-black py-20 px-4">
+    <section id="faqs" className="bg-black py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <ScrollAnimation animationType="fade-up" delay={0.1}>

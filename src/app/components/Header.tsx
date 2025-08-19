@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ScrollAnimation from "./ScrollAnimation";
 
 const Header: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const truckRef = useRef<HTMLImageElement>(null);
   const contentItems = [
     {
       icon: "/svgs/quic.svg",
@@ -37,6 +37,27 @@ const Header: React.FC = () => {
     return () => clearInterval(interval);
   }, [contentItems.length]);
 
+  // useEffect(() => {
+  //   const truck = truckRef.current;
+  //   if (truck) {
+  //     truck.style.transition = 'top 2s linear'; // Smooth transition over 2 seconds
+  //     truck.style.top = '400px'; // Move to target
+  //     // add delay
+  //     setTimeout(() => {
+  //       // rotate the truck 45 degrees
+  //       truck.style.transform = 'rotate(45deg)';
+
+  //       // add delay
+  //       setTimeout(() => {
+  //         // rotate the truck 90 degrees
+  //         truck.style.transform = 'rotate(270deg)';
+  //       }, 1000);
+
+  //     }, 1000);
+
+  //   }
+  // }, []);
+  
   return (
     <header className="  bg-black mt-14 text-white flex flex-col items-center justify-center text-center px-4 py-16">
       {/* Main Heading */}
@@ -89,43 +110,62 @@ const Header: React.FC = () => {
         </a>
       </ScrollAnimation>
 
-                   {/* GIF Images */}
-             <ScrollAnimation animationType="fade-up" delay={0.4}>
-               <div className="mt-26 flex flex-col lg:flex-row gap-8 justify-center items-center">
-                 {/* Flow 1 GIF */}
-                 <div className="flex justify-center">
-                   <Image
-                     src="/images/Flow1.gif"
-                     alt="Flow Animation 1"
-                     width={350}
-                     height={350}
-                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                   />
-                 </div>
-                 
-                 {/* Flow 2 GIF */}
-                 <div className="flex justify-center">
-                   <Image
-                     src="/images/Flow2.gif"
-                     alt="Flow Animation 2"
-                     width={350}
-                     height={350}
-                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                   />
-                 </div>
-                 
-                 {/* Flow 3 GIF */}
-                 <div className="flex justify-center">
-                   <Image
-                     src="/images/Flow3.gif"
-                     alt="Flow Animation 3"
-                     width={350}
-                     height={350}
-                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                   />
-                 </div>
-               </div>
-             </ScrollAnimation>
+        {/* GIF Images */}
+        <ScrollAnimation animationType="fade-up" delay={0.4}>
+
+          {/* <div className="flex justify-center relative">
+            <Image
+              src="/images/FlowFull.png"
+              alt="Flow Animation"
+              width={1000}
+              height={1000}
+              className="rounded-lg shadow-lg mt-26"
+            />
+            <Image 
+              ref={truckRef}
+              src="/images/Truck.png"
+              alt="Truck"
+              width={300}
+              height={300}
+              className="absolute top-[300px] left-[194px] w-[48px]"
+            />
+          </div> */}
+
+          <div className="mt-26 flex flex-col lg:flex-row gap-8 justify-center items-center">
+            {/* Flow 1 GIF */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/Flow1.gif"
+                alt="Flow Animation 1"
+                width={350}
+                height={350}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            
+            {/* Flow 2 GIF */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/Flow2.gif"
+                alt="Flow Animation 2"
+                width={350}
+                height={350}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            
+            {/* Flow 3 GIF */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/Flow3.gif"
+                alt="Flow Animation 3"
+                width={350}
+                height={350}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </ScrollAnimation>
     </header>
   );
 };

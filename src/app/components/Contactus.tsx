@@ -160,13 +160,13 @@ const Contactus: React.FC = () => {
 
                 {/* Submit Button */}
                 <div className="flex justify-start">
-                                     <button
-                     type="submit"
+                  <a href="#"
+                     type="button"
                      className="bg-white text-black font-semibold py-4 px-12 rounded-lg hover:bg-gray-100 hover:shadow-xl hover:shadow-[#D8C67F]/40 hover:-translate-y-2 hover:scale-105 transition-all duration-300 text-lg"
                      style={{ fontFamily: 'var(--font-rubik)' }}
                    >
                      Get Started
-                   </button>
+                   </a>
                 </div>
               </form>
             </div>
