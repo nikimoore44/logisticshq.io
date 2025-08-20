@@ -4,7 +4,7 @@ import ScrollAnimation from "./ScrollAnimation";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black py-20 px-4 relative overflow-hidden">
+    <footer className="bg-black py-20 px-4 relative overflow-hidden border-t border-gray-800 ">
       {/* Subtle radial gradient background effect */}
       <div className="absolute inset-0 bg-gradient-radial from-gray-900 via-black to-black opacity-30"></div>
       

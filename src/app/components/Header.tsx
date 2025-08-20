@@ -62,7 +62,7 @@ const Header: React.FC = () => {
     <header className="  bg-black mt-14 text-white flex flex-col items-center justify-center text-center px-4 py-16">
       {/* Main Heading */}
       <ScrollAnimation animationType="fade-up" delay={0.1}>
-        <h1 className="text-3xl md:text-7xl font-extrabold  leading-19 tracking-wider" style={{ fontFamily: 'var(--font-jockey-one)' }}>
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-wider" style={{ fontFamily: 'var(--font-jockey-one)' }}>
           <span className="space-x-4">Stress-Free Prep & Logistics for</span> <br />
           <span className="space-x-4 mt-4 block">Amazon FBA & Walmart WFS Sellers</span>
         </h1>

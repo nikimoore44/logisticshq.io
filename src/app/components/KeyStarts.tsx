@@ -34,7 +34,7 @@ const KeyStats: React.FC = () => {
           </div>
 
           {/* Right Side - Key Stats */}
-          <div className="lg:w-1/2 space-y-6 px-10">
+          <div className="lg:w-1/2 space-y-6 px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-wider" style={{ fontFamily: 'var(--font-jockey-one)' }}>
               Key Stats & Info
             </h2>

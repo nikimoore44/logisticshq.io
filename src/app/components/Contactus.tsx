@@ -5,7 +5,7 @@ import ScrollAnimation from "./ScrollAnimation";
 
 const Contactus: React.FC = () => {
   return (
-    <section id="contactus" className="bg-black pt-10 pb-20 x-4">
+    <section id="contactus" className="bg-black pt-10 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <ScrollAnimation animationType="fade-up" delay={0.1}>
