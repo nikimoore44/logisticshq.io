@@ -1,9 +1,82 @@
 
-
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import ScrollAnimation from "./ScrollAnimation";
 
 const Contactus: React.FC = () => {
+  const [phone, setPhone] = useState("");
+
+  const [formData, setFormData] = useState({
+    timestamp: new Date().toLocaleString("en-CA", {
+      month: "short", day: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit"
+    }),
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [submitted, setSubmitted] = useState(false);   
+  const [error, setError] = useState(false);   
+
+  const handleChange = (e: any) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitted(false);
+    setError(false);
+
+    const dataToSend = { ...formData, phone };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await res.json();
+
+      if (result.result === "Success") {
+        setFormData({ 
+          timestamp: new Date().toLocaleString("en-CA", {
+            month: "short", day: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit"
+          }), 
+          firstName: "", 
+          lastName: "", 
+          email: "", 
+          phone: "", 
+          company: "",
+          message: "", 
+        });
+        setPhone("");
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
+        setError(false);
+      } else {
+        console.error("Form submission failed.");
+        setError(true);
+        setTimeout(() => setError(false), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError(true);          
+      setTimeout(() => setError(false), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contactus" className="bg-black pt-10 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -77,31 +150,39 @@ const Contactus: React.FC = () => {
           {/* Right Side - Contact Form */}
           <ScrollAnimation animationType="fade-right" delay={0.3}>
             <div>
-              <form className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 {/* First Name and Last Name - Side by Side */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[#AFAFAF] text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                       First Name <span className="text-red-500">*</span>
                     </label>
-                                         <input
-                       type="text"
-                       placeholder="John"
-                       className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
-                       style={{ fontFamily: 'var(--font-rubik)' }}
-                     />
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="John"
+                      required
+                      className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
+                      style={{ fontFamily: 'var(--font-rubik)' }}
+                    />
                   </div>
 
                   <div>
                     <label className="block  text-[#AFAFAF]  text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                       Last Name <span className="text-red-500">*</span>
                     </label>
-                                         <input
-                       type="text"
-                       placeholder="Smith"
-                       className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
-                       style={{ fontFamily: 'var(--font-rubik)' }}
-                     />
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Smith"
+                      required
+                      className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
+                      style={{ fontFamily: 'var(--font-rubik)' }}
+                    />
                   </div>
                 </div>
 
@@ -111,24 +192,31 @@ const Contactus: React.FC = () => {
                     <label className="block  text-[#AFAFAF]  text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                       Email <span className="text-red-500">*</span>
                     </label>
-                                         <input
-                       type="email"
-                       placeholder="seller@amazon.com"
-                       className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
-                       style={{ fontFamily: 'var(--font-rubik)' }}
-                     />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="seller@amazon.com"
+                      required
+                      className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] transition-all duration-300 hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1"
+                      style={{ fontFamily: 'var(--font-rubik)' }}
+                    />
                   </div>
 
                   <div>
                     <label className="block  text-[#AFAFAF]  text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                       Phone <span className="text-red-500">*</span>
                     </label>
-                                         <input
-                       type="tel"
-                       placeholder="(123) 456-7890"
-                       className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
-                       style={{ fontFamily: 'var(--font-rubik)' }}
-                     />
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="(123) 456-7890"
+                      required
+                      className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
+                      style={{ fontFamily: 'var(--font-rubik)' }}
+                    />
                   </div>
                 </div>
 
@@ -137,12 +225,16 @@ const Contactus: React.FC = () => {
                   <label className="block  text-[#AFAFAF]  text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                     Company <span className="text-red-500">*</span>
                   </label>
-                                     <input
-                     type="text"
-                     placeholder="Amazing Seller LLC"
-                     className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
-                     style={{ fontFamily: 'var(--font-rubik)' }}
-                   />
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Amazing Seller LLC"
+                    required
+                    className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300"
+                    style={{ fontFamily: 'var(--font-rubik)' }}
+                  />
                 </div>
 
                 {/* Message Area */}
@@ -150,27 +242,45 @@ const Contactus: React.FC = () => {
                   <label className="block  text-[#AFAFAF] text-base font-medium mb-3" style={{ fontFamily: 'var(--font-rubik)' }}>
                     Briefly describe what you need
                   </label>
-                                     <textarea
-                     rows={5}
-                     placeholder="Please type your message here....."
-                     className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base placeholder-gray-400 focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300 resize-none"
-                     style={{ fontFamily: 'var(--font-rubik)' }}
-                   ></textarea>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    placeholder="Please type your message here....."
+                    required
+                    className="w-full px-4 py-4 bg-[#1C1C1C] border border-[#525252] rounded-lg text-[#71717A] text-base placeholder-gray-400 focus:outline-none focus:border-[#D8C67F] hover:border-[#D8C67F] hover:shadow-lg hover:shadow-[#D8C67F]/30 hover:-translate-y-1 transition-all duration-300 resize-none"
+                    style={{ fontFamily: 'var(--font-rubik)' }}
+                  ></textarea>
                 </div>
 
                 {/* Submit Button */}
                 <div className="flex justify-start">
-                  <a href="#"
-                     type="button"
-                     className="bg-white text-black font-semibold py-4 px-12 rounded-lg hover:bg-gray-100 hover:shadow-xl hover:shadow-[#D8C67F]/40 hover:-translate-y-2 hover:scale-105 transition-all duration-300 text-lg"
-                     style={{ 
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-white text-black font-semibold py-4 px-12 rounded-lg hover:bg-gray-100 hover:shadow-xl hover:shadow-[#D8C67F]/40 hover:-translate-y-2 hover:scale-105 transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ 
                       fontFamily: 'var(--font-rubik)',
                       background: 'linear-gradient(to right, #AE8041, #D8C67F)'
                     }}
-                   >
-                     Get Started
-                   </a>
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Get Started'}
+                  </button>
                 </div>
+
+                {/* Success/Error Messages */}
+                {submitted && (
+                  <div className="text-green-500 text-center py-2 px-4 bg-green-100 bg-opacity-10 rounded-lg border border-green-500">
+                    Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+                
+                {error && (
+                  <div className="text-red-500 text-center py-2 px-4 bg-red-100 bg-opacity-10 rounded-lg border border-red-500">
+                    Something went wrong. Please try again.
+                  </div>
+                )}
               </form>
             </div>
           </ScrollAnimation>
