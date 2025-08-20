@@ -34,27 +34,17 @@ const Contactus: React.FC = () => {
             <div className="space-y-8">
               {/* Google Maps Embed */}
               <div className="w-full h-96 rounded-lg overflow-hidden">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.365824843651!2d-118.21082862454506!3d33.85446182814839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cba56212b15f%3A0x3eb31cbe25a678af!2sCalifornia%20FBA%20Prep%20Center%20%7C%20E-commerce%20Fulfillment%20Center%20%7C%203PL%20Warehouse!5e0!3m2!1sen!2s!4v1755608494445!5m2!1sen!2s" 
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Gardena, CA Location"
-                className="rounded-lg"
-              ></iframe>
-                {/* <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.1234567890123!2d-118.3091185!3d33.8837294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b581539bdd09%3A0xc619371ab562ca91!2sGardena%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890123"
-                  width="100%"
-                  height="100%"
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26495.579493827223!2d-118.30853349999998!3d33.89100755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b581539bdd09%3A0xc619371ab562ca91!2sGardena%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1755682974673!5m2!1sen!2s" 
+                  width="600" 
+                  height="450" 
                   style={{ border: 0 }}
                   allowFullScreen
-                  loading="lazy"
+                  loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Gardena, CA Location"
                   className="rounded-lg"
-                ></iframe> */}
+                ></iframe>
               </div>
 
               {/* Contact Information */}
@@ -78,7 +68,7 @@ const Contactus: React.FC = () => {
                   <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  <a href="https://maps.app.goo.gl/7NX9sdwn9FVaW3Ji7" target="_blank" style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</a>
+                  <a href="https://maps.app.goo.gl/3oq3tFARsjo5bUNa9" target="_blank" style={{ fontFamily: 'var(--font-rubik)' }}>Gardena, CA 92048</a>
                 </div>
               </div>
             </div>
