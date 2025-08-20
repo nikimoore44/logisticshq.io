@@ -113,26 +113,27 @@ const Header: React.FC = () => {
         {/* GIF Images */}
         <ScrollAnimation animationType="fade-up" delay={0.4}>
 
-          {/* <div className="flex justify-center relative">
+          <div className="flex justify-center relative">
             <Image
-              src="/images/FlowFull.png"
+              src="/images/FullFlow.gif"
               alt="Flow Animation"
-              width={1000}
+              width={1120}
               height={1000}
               className="rounded-lg shadow-lg mt-26"
+              unoptimized
             />
-            <Image 
+            {/* <Image 
               ref={truckRef}
               src="/images/Truck.png"
               alt="Truck"
               width={300}
               height={300}
               className="absolute top-[300px] left-[194px] w-[48px]"
-            />
-          </div> */}
+            /> */}
+          </div>
 
-          <div className="mt-26 flex flex-col lg:flex-row gap-8 justify-center items-center">
-            {/* Flow 1 GIF */}
+          {/* <div className="mt-26 flex flex-col lg:flex-row gap-8 justify-center items-center">
+
             <div className="flex justify-center">
               <Image
                 src="/images/Flow1.gif"
@@ -144,7 +145,6 @@ const Header: React.FC = () => {
               />
             </div>
             
-            {/* Flow 2 GIF */}
             <div className="flex justify-center">
               <Image
                 src="/images/Flow2.gif"
@@ -156,7 +156,6 @@ const Header: React.FC = () => {
               />
             </div>
             
-            {/* Flow 3 GIF */}
             <div className="flex justify-center">
               <Image
                 src="/images/Flow3.gif"
@@ -167,7 +166,8 @@ const Header: React.FC = () => {
                 unoptimized
               />
             </div>
-          </div>
+          </div> */}
+
         </ScrollAnimation>
     </header>
   );
