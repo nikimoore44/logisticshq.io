@@ -47,7 +47,7 @@ const Contactus: React.FC = () => {
 
       const result = await res.json();
 
-      if (result.result === "Success") {
+      if (result.result === "Success" || result.result === "Partial Success") {
         setFormData({ 
           timestamp: new Date().toLocaleString("en-CA", {
             month: "short", day: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit"
@@ -63,8 +63,11 @@ const Contactus: React.FC = () => {
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 5000);
         setError(false);
+        
+        // Log detailed results for debugging
+        console.log("Form submission result:", result);
       } else {
-        console.error("Form submission failed.");
+        console.error("Form submission failed:", result);
         setError(true);
         setTimeout(() => setError(false), 5000);
       }
