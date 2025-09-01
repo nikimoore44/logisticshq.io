@@ -268,7 +268,7 @@ const Contactus: React.FC = () => {
                       background: 'linear-gradient(to right, #AE8041, #D8C67F)'
                     }}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Get Started'}
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
                 </div>
 
