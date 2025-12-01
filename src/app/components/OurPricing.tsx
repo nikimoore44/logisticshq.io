@@ -16,7 +16,7 @@ const OurPricing: React.FC = () => {
     },
     {
       service: "Storage",
-      price: "$40.00 / pallet",
+      price: "$50.00 / pallet",
       highlighted: false
     }
   ];
